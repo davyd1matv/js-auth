@@ -13,9 +13,24 @@
 
 		<div class="form">
 			<div class="form__item">
-				{{> field action="singupForm.submit" label="Ел. адреса" type="email" name="email"
+				{{> field action="singupForm.change" label="Ел. адреса" type="email" name="email"
 				placeholder="Ваш email"}}
-				<span class="form__error">Error</span>
+				<span name="email" class="form__error">Error</span>
+			</div>
+			<div class="form__item">
+				{{> field-password action="singupForm.change" label="Пароль" name="password"
+				placeholder="Ваш пароль"}}
+				<span name="password" class="form__error">Error</span>
+			</div>
+			<div class="form__item">
+				{{> field-select action="singupForm.change" label="Роль" name="role" list=data.role
+				placeholder="Оберіть роль"}}
+				<span name="role" class="form__error">Error</span>
+			</div>
+			<div class="form__item">
+				{{> field-checkbox action="singupForm.change" label="Ви погоджуєтеся із правилами сервіса"
+				name="isConfirm"}}
+				<span name="isConfirm" class="form__error">Error</span>
 			</div>
 		</div>
 

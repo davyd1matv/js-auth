@@ -7,7 +7,13 @@ const { User } = require('../class/user')
 router.get('/singup', function (req, res) {
   return res.render('singup', {
     name: 'singup',
-    component: ['back-button', 'field', 'field-password'],
+    component: [
+      'back-button',
+      'field',
+      'field-password',
+      'field-checkbox',
+      'field-select',
+    ],
 
     title: 'Singup page',
 

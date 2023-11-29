@@ -4,7 +4,7 @@ class FieldPassword {
 
     const input = target.previousElementSibling
 
-    const type = input.getAttrebute('type')
+    const type = input.getAttribute('type')
 
     if (type === 'password') {
       input.setAttribute('type', 'text')
@@ -14,4 +14,4 @@ class FieldPassword {
   }
 }
 
-window.fieldPasword = FieldPassword
+window.fieldPassword = FieldPassword
