@@ -25,7 +25,7 @@
 .button {
 	color: s.color(white);
 	background: s.color(main);
-	padding: s, space(4) s.space(8);
+	padding: s.space(4) s.space(8);
 	border-radius: 10px;
 
 	@include s.click;

@@ -7,7 +7,7 @@ const { User } = require('../class/user')
 router.get('/singup', function (req, res) {
   return res.render('singup', {
     name: 'singup',
-    compnent: ['back-button'],
+    component: ['back-button', 'field', 'field-password'],
 
     title: 'Singup page',
 

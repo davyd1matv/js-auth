@@ -12,12 +12,14 @@
 		<h1 class="page__title">Реєстрація</h1>
 
 		<div class="form">
-			<div class="form__item">Test
+			<div class="form__item">
+				{{> field action="singupForm.submit" label="Ел. адреса" type="email" name="email"
+				placeholder="Ваш email"}}
 				<span class="form__error">Error</span>
 			</div>
 		</div>
 
-		<button class="button" type="button">Зареєструватися</button>
+		<button onclick="singupForm.submit()" class="button" type="button">Зареєструватися</button>
 
 		<span class="alert alert--error">Увага, Помилка!</span>
 	</form>
