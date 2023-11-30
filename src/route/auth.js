@@ -4,9 +4,15 @@ const router = express.Router()
 
 const { User } = require('../class/user')
 
-router.get('/singup', function (req, res) {
-  return res.render('singup', {
-    name: 'singup',
+User.create({
+  email: 'test@testascdvbgffvscdvbzcxvb.com',
+  password: 123,
+  role: 1,
+})
+
+router.get('/signup', function (req, res) {
+  return res.render('signup', {
+    name: 'signup',
     component: [
       'back-button',
       'field',
@@ -15,7 +21,7 @@ router.get('/singup', function (req, res) {
       'field-select',
     ],
 
-    title: 'Singup page',
+    title: 'Signup page',
 
     data: {
       role: [
@@ -33,16 +39,29 @@ router.get('/singup', function (req, res) {
   })
 })
 
-// Підключіть файли роутів
+router.post('/signup', function (req, res) {
+  const { email, password, role } = req.body
 
-// const test = require('./test')
+  console.log(req.body)
 
-// Підключіть інші файли роутів, якщо є
-// const auth = require('./auth')
+  if (!email || !password || !role) {
+    return res.status(400).json({
+      message: "Помилка, Обов'язкові поля відсутні!",
+    })
+  }
 
-// Об'єднайте файли роутів за потреби
-// router.use('/', auth)
-// Використовуйте інші файли роутів, якщо є
+  try {
+    User.create({ email, password, role })
 
-// Експортуємо глобальний роутер
+    return res.status(200).json({
+      message: 'Користувач успішно зареєстрований',
+    })
+  } catch (err) {
+    return res.status(400).json({
+      message: 'Помилка створення користувача!',
+    })
+  }
+})
+
+// Експортуємо глобальний роутер // Підключаємо роутер до бек-енду
 module.exports = router
