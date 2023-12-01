@@ -63,5 +63,22 @@ router.post('/signup', function (req, res) {
   }
 })
 
+router.get('/recovery', function (req, res) {
+  return res.render('signup', {
+    name: 'recovery',
+    component: ['back-button', 'field'],
+
+    title: 'Recovery page',
+
+    data: {},
+  })
+})
+
+router.post('/recovery', function (req, res) {
+  const { email } = req.body
+
+  console.log(email)
+})
+
 // Експортуємо глобальний роутер // Підключаємо роутер до бек-енду
 module.exports = router
