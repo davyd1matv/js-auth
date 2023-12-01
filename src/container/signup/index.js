@@ -8,9 +8,9 @@ class SignupForm extends Form {
   FIELD_NAME = {
     EMAIL: 'email',
     PASSWORD: 'password',
-    PASSWORD_AGAIN: 'passwirdAfain',
+    PASSWORD_AGAIN: 'passwordAgain',
     ROLE: 'role',
-    IS_CONFIRM: 'isConfirms',
+    IS_CONFIRM: 'isConfirm',
   }
 
   FIELD_ERROR = {
@@ -97,23 +97,23 @@ class SignupForm extends Form {
         this.setAlert('error', error.message)
       }
     }
-
-    convertData = () => {
-      return JSON.stringify({
-        [this.FIELD_NAME.EMAIL]:
-          this.value[this.FIELD_NAME.EMAIL],
-        [this.FIELD_NAME.PASSWORD]:
-          this.value[this.FIELD_NAME.PASSWORD],
-        [this.FIELD_NAME.ROLE]:
-          this.value[this.FIELD_NAME.ROLE],
-      })
-    }
-
-    //   static change = (name, value) => {
-    //     console.log(name, value)
-    //     if (this.validate(name, value)) this.value[name] = value
-    //   }
   }
+
+  convertData = () => {
+    return JSON.stringify({
+      [this.FIELD_NAME.EMAIL]:
+        this.value[this.FIELD_NAME.EMAIL],
+      [this.FIELD_NAME.PASSWORD]:
+        this.value[this.FIELD_NAME.PASSWORD],
+      [this.FIELD_NAME.ROLE]:
+        this.value[this.FIELD_NAME.ROLE],
+    })
+  }
+
+  //   static change = (name, value) => {
+  //     console.log(name, value)
+  //     if (this.validate(name, value)) this.value[name] = value
+  //   }
 }
 
 window.signupForm = new SignupForm()

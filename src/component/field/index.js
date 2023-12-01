@@ -1,7 +1,7 @@
-class BackButton {
-  static back() {
-    return window.history.back()
-  }
-}
+// class BackButton {
+//   static back() {
+//     return window.history.back()
+//   }
+// }
 
-window.backButton = BackButton
+// window.backButton = BackButton

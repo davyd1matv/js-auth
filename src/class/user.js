@@ -34,6 +34,9 @@ class User {
     this.#list.push(user)
 
     console.log(this.#list)
+
+    // return user
+    //+
   }
 
   static getByEmail(email) {
