@@ -1,1 +1,12 @@
 @use '../../style' as s;
+
+.home {
+	display: flex;
+	flex-direction: center;
+	padding: 50px;
+}
+
+.home-text {
+	font-size: 30px;
+	color: orange;
+}
