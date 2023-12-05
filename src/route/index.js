@@ -7,7 +7,29 @@ router.get('/', function (req, res) {
     name: 'index',
     compnent: [''],
 
+    title: 'Index page',
+
+    data: {},
+  })
+})
+
+router.get('/home', function (req, res) {
+  res.render('home', {
+    name: 'home',
+    compnent: [''],
+
     title: 'Home page',
+
+    data: {},
+  })
+})
+
+router.get('/logout', function (req, res) {
+  res.render('logout', {
+    name: 'logout',
+    compnent: [''],
+
+    title: 'Logout page',
 
     data: {},
   })

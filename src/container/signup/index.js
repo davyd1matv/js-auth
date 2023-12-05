@@ -4,6 +4,8 @@ import {
   REG_EXP_EMAIL,
 } from '../../script/form'
 
+import { saveSession } from '../../script/session'
+
 class SignupForm extends Form {
   FIELD_NAME = {
     EMAIL: 'email',
@@ -90,6 +92,9 @@ class SignupForm extends Form {
 
         if (res.ok) {
           this.setAlert('success', data.message)
+          saveSession(data.session)
+          location.assign('/')
+          //   alert(data.session.token)
         } else {
           this.setAlert('error', data.message)
         }
