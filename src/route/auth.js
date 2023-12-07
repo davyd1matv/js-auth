@@ -9,9 +9,21 @@ const { Confirm } = require('../class/confirm')
 const { Session } = require('../class/session')
 
 User.create({
-  email: 'test@test.com',
+  email: 'user@test.com',
   password: 123,
   role: 1,
+})
+
+User.create({
+  email: 'admin@test.com',
+  password: 111,
+  role: 2,
+})
+
+User.create({
+  email: 'developer@test.com',
+  password: 555,
+  role: 3,
 })
 
 router.get('/signup', function (req, res) {

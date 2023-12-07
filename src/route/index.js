@@ -40,10 +40,14 @@ const test = require('./test')
 // Підключіть інші файли роутів, якщо є
 const auth = require('./auth')
 
+const user = require('./user')
+
 // Об'єднайте файли роутів за потреби
 router.use('/', test)
 // Використовуйте інші файли роутів, якщо є
 router.use('/', auth)
+
+router.use('/', user)
 
 // Експортуємо глобальний роутер
 module.exports = router

@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  if (window.session) {
+  if (!window.session) {
     location.assign('/')
   }
 })
